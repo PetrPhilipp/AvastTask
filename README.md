@@ -2,7 +2,11 @@
 
 To run this project:
 
-<ul> 
-  <li>Clone the repository</li>
-  <li>npm install</li>
-  <li>npm start</li>
+```
+https://github.com/PetrPhilipp/AvastTask.git
+
+npm install
+
+npm start
+```
+* [localhost:3000](http://localhost:3000/)
