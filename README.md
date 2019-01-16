@@ -3,7 +3,7 @@
 To run this project:
 
 ```
-https://github.com/PetrPhilipp/AvastTask.git
+git clone https://github.com/PetrPhilipp/AvastTask.git
 
 npm install
 
