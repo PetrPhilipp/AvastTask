@@ -2,8 +2,7 @@
 
 To run this project:
 
-Clone the repo
-
-npm install
-
-npm start
+<ul> 
+  <li>Clone the repository</li>
+  <li>npm install</li>
+  <li>npm start</li>
