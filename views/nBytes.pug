@@ -3,10 +3,10 @@ extends layout
 block content
     div(class = 'special')
         h1 Task: Get first N bytes of a file
-        p Please submit a number of bytes to show
+        p Please submit a number of bytes to show.
         form(action = '/nBytes/submit', method = 'post')
             input(type = 'number', name = 'numberOfBytes', min= '1', max= '2147483647', required)
             button(type = 'submit') submit
         div
-            p #{num} bytes from lorem epsm text file encoded using utf8:
+            p #{num} bytes from lorem epsm text file encoded using UTF 8:
             p #{nb}
