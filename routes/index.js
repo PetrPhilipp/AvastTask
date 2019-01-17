@@ -13,12 +13,25 @@ router.get('/unixTime', function(req, res, next) {
 
 router.get('/nBytes/:num?', function(req, res, next) {
   let numOfBytes = req.params.num;
-  let nBytesAsString;
-  if(numOfBytes > 0 & numOfBytes < 2147483647){
-    nBytesAsString = NBytes.readNBytes(numOfBytes);
-  }
-  res.render('nBytes', { title: 'N Bytes', num: numOfBytes, bytesAsString: nBytesAsString});
+  res.render('nBytes', {
+    title: 'N Bytes',
+    num: numOfBytes,
+    bytesAsString: NBytes.readXBytes(numOfBytes).then((n)=>{
+      res.send('nBytes').body({ title: 'N Bytes', num: numOfBytes, bytesAsString: n});
+    }).catch((error => {
+      console.log(error);
+    }))
+  });
 });
+// let nBytesAsString;
+// if(numOfBytes > 0 & numOfBytes < 2147483647){
+//   NBytes.readXBytes(numOfBytes).then((n)=>{
+//     nBytesAsString = n;
+//     res.render('nBytes', { title: 'N Bytes', num: numOfBytes, bytesAsString: nBytesAsString});
+//   }).catch((error => {
+//     console.log(error);
+//   }));
+// }
 
 router.post('/nBytes/submit', function (req, res, next) {
   let num = req.body.numberOfBytes;

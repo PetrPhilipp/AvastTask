@@ -3,7 +3,7 @@ extends layout
 block content
     div(class = 'special')
         h1 Task: Get first N bytes of a file
-        p please submit a number of bytes to show
+        p Please submit a number of bytes to show
         form(action = '/nBytes/submit', method = 'post')
             input(type = 'number', name = 'numberOfBytes', min= '1', max= '2147483647', required)
             button(type = 'submit') submit
