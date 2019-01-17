@@ -1,19 +1,15 @@
 let fs = require('fs');
 
-// TODO: rewrite as async
 // testing: for this jest, enzime
-exports.readXBytes = function(n){
+const loremPath = './resources/lorem.txt';
+exports.readXBytes = (n) => {
     return new Promise((resolve, reject) =>{
-        if (!n) {
-            reject('N');
-            return;
-        }
-        fs.open('./resources/lorem.txt', 'r', function (err, fd) {
+        fs.open(loremPath, 'r', (err, fd) => {
             if (err) {
-                reject(new Error(err.message))
+                reject(err.message);
             }
             let buffer = Buffer.alloc(parseInt(n, 10));
-            fs.read(fd, buffer, 0, n, 0, function (err, num) {
+            fs.read(fd, buffer, 0, n, 0, (err, num) => {
                 resolve(buffer.toString('utf-8', 0, num));
             });
         });
