@@ -11,27 +11,22 @@ router.get('/unixTime', function(req, res, next) {
   res.render('unixTime', { title: 'Unix Time', time: uTime()});
 });
 
-router.get('/nBytes/:num?', function(req, res, next) {
+router.get('/nBytes/:num?', function (req, res, next) {
   let numOfBytes = req.params.num;
-  res.render('nBytes', {
-    title: 'N Bytes',
-    num: numOfBytes,
-    bytesAsString: NBytes.readXBytes(numOfBytes).then((n)=>{
-      res.send('nBytes').body({ title: 'N Bytes', num: numOfBytes, bytesAsString: n});
-    }).catch((error => {
-      console.log(error);
-    }))
-  });
+  console.log('====> HERE',req.params);
+  if(!req.params || !numOfBytes) {
+    res.render('nBytes', {title: 'N Bytes', num: numOfBytes, bytesAsString: '0'});
+  };
+  NBytes.readXBytes(numOfBytes).then((n) => {
+    console.log('n',n);
+    res.render('nBytes', {title: 'N Bytes', num: numOfBytes, nb: n});
+  }).catch((error => {
+    console.log(error);
+  }))
 });
-// let nBytesAsString;
-// if(numOfBytes > 0 & numOfBytes < 2147483647){
-//   NBytes.readXBytes(numOfBytes).then((n)=>{
-//     nBytesAsString = n;
-//     res.render('nBytes', { title: 'N Bytes', num: numOfBytes, bytesAsString: nBytesAsString});
-//   }).catch((error => {
-//     console.log(error);
-//   }));
-// }
+
+//  res.render('nBytes', { title: 'N Bytes', num: numOfBytes, bytesAsString: NBytes.readNBytes(numOfBytes)});
+//  })
 
 router.post('/nBytes/submit', function (req, res, next) {
   let num = req.body.numberOfBytes;
