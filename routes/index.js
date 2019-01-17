@@ -18,8 +18,7 @@ router.get('/nBytes', function (req, res, next) {
 router.post('/nBytes/submit', function (req, res, next) {
   let numOfBytes = req.body.numberOfBytes;
 
-  NBytes.readXBytes(numOfBytes).then((utf8Bytes) => {
-    console.log('n',utf8Bytes);
+  NBytes.readNBytes(numOfBytes).then((utf8Bytes) => {
     res.render('nBytes', {title: 'N Bytes', num: numOfBytes, nb: utf8Bytes});
   }).catch((err => {
     console.error(err.message);

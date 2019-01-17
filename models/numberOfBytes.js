@@ -2,7 +2,7 @@ let fs = require('fs');
 
 // testing: for this jest, enzime
 const loremPath = './resources/lorem.txt';
-exports.readXBytes = (n) => {
+exports.readNBytes = (n) => {
     return new Promise((resolve, reject) =>{
         fs.open(loremPath, 'r', (err, fd) => {
             if (err) {
