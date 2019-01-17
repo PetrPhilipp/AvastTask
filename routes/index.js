@@ -1,13 +1,13 @@
-let express = require('express');
-let router = express.Router();
-let NBytes = require('../models/numberOfBytes')
+const express = require('express');
+const router = express.Router();
+const NBytes = require('../models/numberOfBytes')
 
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Avast Task' });
 });
 
 router.get('/unixTime', function(req, res, next) {
-  let uTime = Date.now;
+  const uTime = Date.now;
   res.render('unixTime', { title: 'Unix Time', time: uTime()});
 });
 
@@ -16,8 +16,7 @@ router.get('/nBytes', function (req, res, next) {
 });
 
 router.post('/nBytes/submit', function (req, res, next) {
-  let numOfBytes = req.body.numberOfBytes;
-
+  const numOfBytes = req.body.numberOfBytes;
   NBytes.readNBytes(numOfBytes).then((utf8Bytes) => {
     res.render('nBytes', {title: 'N Bytes', num: numOfBytes, nb: utf8Bytes});
   }).catch((err => {

@@ -1,4 +1,4 @@
-let fs = require('fs');
+const fs = require('fs');
 
 // testing: for this jest, enzime
 const loremPath = './resources/lorem.txt';
