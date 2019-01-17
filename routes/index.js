@@ -1,6 +1,6 @@
 let express = require('express');
 let router = express.Router();
-let NBytes = require('../numberOfBytes')
+let NBytes = require('../models/numberOfBytes')
 
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Avast Task' });
