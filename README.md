@@ -27,4 +27,5 @@ There are four pages that you can go to (index, UNIX time, NBytes and Content of
 **Content of URL** is a view that prints data given after .../contentOfURL/[DATA]
 
 ### Testing
-I have not included any tests for this project, because it does not have much to test at this point (only passing of data). For the one function "readNBytes(n)" I have not done any tests, as it can only be given a number as specified by the submission (making the parseInt safe) and the path to the file is a constant, therefore we do not have to worry about that either.
+I have not included any tests for this project.
+This is because it actually does not have much to test. At this point we are mostly just passing data around. As for the one function "readNBytes(n)", it can only be given a number as specified by the submission (making the parseInt safe) and the path to the file is a constant, therefore we do not have to worry about that either.
