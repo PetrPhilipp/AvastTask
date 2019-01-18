@@ -1,5 +1,6 @@
 # AvastTask
 Hi, this is a task project written using Node.js and Express.
+I have chosen these technologies, as they allow for fast deployment of code, and to me seem fit for the task. Another reason is, that I am learning how to program with JS and this was a great training project.
 
 
 ## To run this project:
