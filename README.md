@@ -27,6 +27,12 @@ There are four pages that you can go to (index, UNIX time, NBytes and Content of
 **Content of URL** is a view that prints data given after .../contentOfURL/[DATA]
 
 ### Testing
-I have decited to test the readNBytes and routing. 
+**To run tests:**
+```
+npm test
+```
+I have tested the readNBytes and routing. 
 
-For the readNBytes, I am testing a couple of scenarios, these are all values where it should work, I am only testing these as the function should never be given a wrong input, I achieve this by using a submit form with constraints.
+For readNBytes, I am testing a couple of scenarios, these are all values where it should work. I am only testing these as the function should never be given a wrong input, I achieve this by using a submission form with constraints.
+
+In routing I am testing whether I get the correct statusCode and whether the response contains a text that is unique to the page that should be rendered.
