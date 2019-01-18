@@ -15,7 +15,7 @@ npm start
 
 
 ## Documentation
-Since this project is quite small, there is not much else but a little bit of routing and one simple function.
+Since this project is quite small, there is not much else, but a little bit of routing and one simple function.
 There are four pages that you can go to (index, UNIX time, NBytes and Content of URL).
 
  * **Index** is a simple view with a little bit of text.
