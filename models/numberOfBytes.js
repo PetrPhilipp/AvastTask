@@ -1,6 +1,5 @@
 const fs = require('fs');
 
-// testing: for this jest, enzime
 const loremPath = './resources/lorem.txt';
 exports.readNBytes = (n) => {
     return new Promise((resolve, reject) =>{
